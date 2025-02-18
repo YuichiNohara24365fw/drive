@@ -11,6 +11,8 @@ import CutSheetPage from './pages/CutSheetPage';
 import CutManagementPage from './pages/CutManagementPage';
 import CutProgressPage from './pages/CutProgressPage';
 import StaffDetailPage from './pages/StaffDetailPage';
+import KoubanHyouList from './components/KoubanHyouList';
+import KoubanHyouInput from './components/KoubanHyouInput';
 
 function App() {
   return (
@@ -30,6 +32,9 @@ function App() {
               <Route path="/cut-sheet" element={<CutSheetPage />} />
               <Route path="/cut-management" element={<CutManagementPage />} />
               <Route path="/cut-progress" element={<CutProgressPage />} />
+              <Route path="/kouban-hyou" element={<KoubanHyouList />} />
+              <Route path="/kouban-hyou/new" element={<KoubanHyouInput />} />
+              <Route path="/kouban-hyou/:id" element={<KoubanHyouInput />} />
             </Routes>
           </main>
         </div>

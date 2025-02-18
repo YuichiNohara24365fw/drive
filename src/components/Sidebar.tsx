@@ -12,7 +12,8 @@ import {
   Table,
   Pin,
   ChevronLeft,
-  Menu
+  Menu,
+  FileSpreadsheet
 } from 'lucide-react';
 
 const Sidebar = () => {
@@ -42,6 +43,7 @@ const Sidebar = () => {
     { icon: Layers, label: 'カット管理', path: '/cut-sheet' },
     { icon: Scissors, label: 'カット詳細', path: '/cut-management' },
     { icon: Table, label: 'カット進行表', path: '/cut-progress' },
+    { icon: FileSpreadsheet, label: '香盤表', path: '/kouban-hyou' },
     { icon: Users, label: 'スタッフ', path: '/staff' },
     { icon: Calendar, label: 'スケジュール', path: '/schedule' },
     { icon: Settings, label: '設定', path: '/settings' },
@@ -79,7 +81,6 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* モバイルメニューボタン */}
       {isMobile && (
         <button
           onClick={toggleMobileMenu}
@@ -89,7 +90,6 @@ const Sidebar = () => {
         </button>
       )}
 
-      {/* オーバーレイ（モバイル時のみ） */}
       {isMobile && isVisible && (
         <div
           className="fixed inset-0 bg-black/50 z-40"
@@ -97,7 +97,6 @@ const Sidebar = () => {
         />
       )}
 
-      {/* ホバーエリア（デスクトップ時のみ） */}
       {!isMobile && !isVisible && !isPinned && (
         <div
           className="fixed left-0 top-0 w-4 h-screen z-20"
@@ -105,7 +104,6 @@ const Sidebar = () => {
         />
       )}
 
-      {/* サイドバー */}
       <div
         className={`h-screen bg-gradient-to-b from-horizon-600 to-horizon-800 text-white transition-all duration-300 ease-in-out
           ${isVisible || isPinned ? 'w-64' : 'w-0'}
